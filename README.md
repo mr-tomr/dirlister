@@ -24,6 +24,8 @@ You can install these dependencies using the following command:
 pip install -r requirements.txt
 ```
 
+Usage:
+
 ```bash
 python3 dirlister.py <URL>
 ```
