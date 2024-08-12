@@ -48,6 +48,9 @@ if __name__ == "__main__":
         sys.exit(1)
 
     target_url = sys.argv[1]
+    if not target_url.endswith('/'):
+        target_url += '/'
+        
     visited_urls = set()
     print(f"Enumerating directories and files from {target_url}")
     enumerate_items(target_url, visited_urls)
