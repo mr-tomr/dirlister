@@ -2,10 +2,13 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
+import urllib3
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def list_items(url):
     try:
-        response = requests.get(url)
+        response = requests.get(url, verify=False)
         if response.status_code != 200:
             print(f"Failed to access {url}")
             return []
